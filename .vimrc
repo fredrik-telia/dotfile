@@ -1,5 +1,19 @@
+set shell=/bin/sh
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+set nobackup       "no backup files
+set nowritebackup  "only in case you don't want a backup file while editing
+set noswapfile     "no swap files
+set autochdir
+set autoread
+set number
+set scrolloff=5
+
+:nnoremap <C-Tab> gt
+:nnoremap <C-S-Tab> gT
+
+command CDC cd %:p:h
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -10,11 +24,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Bundle 'wookiehangover/jshint.vim'
+"Bundle 'wookiehangover/jshint.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
-
+Plugin 'mxw/vim-jsx'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'ctrlpvim/ctrlp.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -47,19 +63,24 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 syntax on
+let g:jsx_ext_required = 0 "allow jsx in normal js-files
+let g:syntastic_javascript_checkers = ['eslint']
+let mapleader=","
 set smartindent
 set expandtab
 set tabstop=4
 set shiftwidth=4
 let do_syntax_sel_menu=1
 set showmatch
+set showcmd
 set wildmenu
 set guifont=Menlo\ Regular:h18
-colorscheme jellybeans
+set background=dark
+colorscheme gruvbox
 if has('gui_running')
-    colorscheme molokai
+    colorscheme gruvbox
 endif
-
+" let g:netrw_liststyle=3
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
@@ -77,3 +98,4 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+set backspace=indent,eol,start
