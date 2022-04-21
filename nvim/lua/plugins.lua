@@ -34,15 +34,26 @@ return require('packer').startup(function()
   }
   -- Lua development
   -- use { 'tjdevries/nlua.nvim' }
-	use {
-    "hrsh7th/nvim-cmp",
+  use {
+  'VonHeikemen/lsp-zero.nvim',
     requires = {
-      "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
-      'quangnguyen30192/cmp-nvim-ultisnips', 'hrsh7th/cmp-nvim-lua',
-      'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
-      'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
-     },
-     config = [[ require('config/nvim-cmp') ]]
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/nvim-lsp-installer'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    },
+    config = [[ require('config/lspzero') ]]
   }
   use {
     'tzachar/cmp-tabnine',

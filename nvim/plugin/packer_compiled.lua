@@ -69,25 +69,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-calc"] = {
-    loaded = true,
-    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-calc",
-    url = "https://github.com/hrsh7th/cmp-calc"
-  },
-  ["cmp-emoji"] = {
-    loaded = true,
-    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-emoji",
-    url = "https://github.com/hrsh7th/cmp-emoji"
-  },
-  ["cmp-look"] = {
-    loaded = true,
-    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-look",
-    url = "https://github.com/octaltree/cmp-look"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -99,25 +89,25 @@ _G.packer_plugins = {
     path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
-  ["cmp-nvim-ultisnips"] = {
-    loaded = true,
-    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
-    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
-  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-spell"] = {
-    loaded = true,
-    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-spell",
-    url = "https://github.com/f3fora/cmp-spell"
-  },
   ["cmp-tabnine"] = {
     loaded = true,
     path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gruvbox-material"] = {
     loaded = true,
@@ -129,6 +119,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/lsp-status.nvim",
     url = "https://github.com/nvim-lua/lsp-status.nvim"
+  },
+  ["lsp-zero.nvim"] = {
+    config = { " require('config/lspzero') " },
+    loaded = true,
+    path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lspkind-nvim"] = {
     config = { " require('config/lspkind') " },
@@ -143,7 +139,6 @@ _G.packer_plugins = {
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
-    config = { " require('config/nvim-cmp') " },
     loaded = true,
     path = "/Users/fhog/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
@@ -199,14 +194,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lspkind-nvim
-time([[Config for lspkind-nvim]], true)
- require('config/lspkind') 
-time([[Config for lspkind-nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
- require('config/nvim-cmp') 
-time([[Config for nvim-cmp]], false)
 -- Config for: null-ls.nvim
 time([[Config for null-ls.nvim]], true)
  require('config/null-ls')
@@ -215,14 +202,22 @@ time([[Config for null-ls.nvim]], false)
 time([[Config for nvim-lspconfig]], true)
  require('config/nvim-lspconfig')
 time([[Config for nvim-lspconfig]], false)
--- Config for: lsp-status.nvim
-time([[Config for lsp-status.nvim]], true)
- require('config/lspstatus') 
-time([[Config for lsp-status.nvim]], false)
 -- Config for: nvim-lsp-installer
 time([[Config for nvim-lsp-installer]], true)
  require('config/lsp_installer_nvim') 
 time([[Config for nvim-lsp-installer]], false)
+-- Config for: lspkind-nvim
+time([[Config for lspkind-nvim]], true)
+ require('config/lspkind') 
+time([[Config for lspkind-nvim]], false)
+-- Config for: lsp-status.nvim
+time([[Config for lsp-status.nvim]], true)
+ require('config/lspstatus') 
+time([[Config for lsp-status.nvim]], false)
+-- Config for: lsp-zero.nvim
+time([[Config for lsp-zero.nvim]], true)
+ require('config/lspzero') 
+time([[Config for lsp-zero.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
